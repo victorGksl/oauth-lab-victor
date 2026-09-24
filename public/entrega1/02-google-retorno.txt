@@ -1,0 +1,1 @@
+https://NOME-DO-PROJETO.pages.dev/oauth/callback/google

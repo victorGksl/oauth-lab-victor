@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laboratório de autenticação</title>
+    <link rel="stylesheet" href="/styles.css">
+    <!-- "defer" faz o script rodar só depois que o HTML inteiro foi lido -->
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Laboratório de autenticação</h1>
+
+      <!-- O app.js troca este texto depois de consultar /api/me -->
+      <p id="status">A sessão ainda não foi consultada.</p>
+
+      <!-- Aparece quando NÃO existe sessão -->
+      <section id="area-login">
+        <a class="botao" href="/oauth/login/google">Entrar com Google</a>
+        <a class="botao" href="/oauth/login/github">Entrar com GitHub</a>
+      </section>
+
+      <!-- Aparece quando existe sessão. O logout é um POST (nunca um link GET). -->
+      <section id="area-sessao" hidden>
+        <form method="post" action="/oauth/logout">
+          <button class="botao" type="submit">Sair</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

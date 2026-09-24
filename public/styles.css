@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f4f5f7;
+  color: #1d1f23;
+}
+
+main {
+  max-width: 480px;
+  margin: 64px auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.botao {
+  display: block;
+  padding: 12px;
+  border: 1px solid #c9ccd1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: inherit;
+  font: inherit;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background: #eef0f3;
+}
+
+form .botao {
+  width: 100%;
+}

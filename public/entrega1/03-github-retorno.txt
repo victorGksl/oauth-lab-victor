@@ -1,0 +1,2 @@
+Homepage URL: https://NOME-DO-PROJETO.pages.dev
+Authorization callback URL: https://NOME-DO-PROJETO.pages.dev/oauth/callback/github
