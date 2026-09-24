@@ -7,14 +7,14 @@ Valores sensíveis (cookies, code, state, nonce, code_challenge, tokens) foram s
 - **Preparação:** iniciei o login em uma janela comum e parei na página do provedor. Copiei a URL de autorização para uma janela privativa, que não possui o cookie `__Host-oauth-tx`.
 - **Pedido enviado:** `GET /oauth/callback/google?code=[REMOVIDO]&state=[REMOVIDO]` sem o cookie `__Host-oauth-tx`.
 - **Resultado esperado:** resposta 400 "Não foi possível concluir o login." e nenhuma sessão criada.
-- **Resultado observado:** [PREENCHER]
+- **Resultado observado:** 400 "Não foi possível concluir o login." Nenhuma linha nova em `sessions`. (24/09/2026)
 
 ## Caso 2: state alterado
 
 - **Preparação:** iniciei outro login, parei na página do provedor e alterei um único caractere do parâmetro `state` na barra de endereço.
 - **Pedido enviado:** `GET /oauth/callback/google?code=[REMOVIDO]&state=[REMOVIDO]` com o cookie `__Host-oauth-tx` correto.
 - **Resultado esperado:** resposta 400 antes da troca do código; nenhuma sessão criada.
-- **Resultado observado:** [PREENCHER]
+- **Resultado observado:** 400 "Não foi possível concluir o login." A troca do código não foi feita: a rota recusou no passo de comparação do state. Nenhuma sessão criada. (24/09/2026)
 
 ## Caso 3: reutilização da transação
 
@@ -35,7 +35,7 @@ Valores sensíveis (cookies, code, state, nonce, code_challenge, tokens) foram s
 - **Preparação:** com uma sessão válida em URL_BASE, abri https://example.com em outra aba e executei no console: `fetch("URL_BASE/oauth/logout", { method: "POST", credentials: "include" })`
 - **Pedido enviado:** `POST /oauth/logout` com `Origin: https://example.com`.
 - **Resultado esperado:** a rota recusa (403 "Origem não permitida.") e a sessão original continua válida em URL_BASE.
-- **Resultado observado:** [PREENCHER]
+- **Resultado observado:** O navegador bloqueou a leitura da resposta (TypeError: Failed to fetch, CORS) e não enviou o cookie SameSite=Strict. O mesmo pedido com `Origin: https://example.com` recebe 403 "Origem não permitida.". A sessão original do GitHub continuou no D1 e válida. (24/09/2026)
 
 ## Caso 6: reutilização do cookie revogado
 
