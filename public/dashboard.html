@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/dashboard.js" defer></script>
+  </head>
+  <body>
+    <main class="dashboard">
+      <header class="topo">
+        <h1>Dashboard</h1>
+        <a class="link" href="/">Voltar ao início</a>
+      </header>
+
+      <!-- O dashboard.js preenche este texto com os dados de /api/me -->
+      <p id="usuario">Consultando a sessão...</p>
+
+      <!-- Cartões com números de exemplo (dados fixos, só para demonstração) -->
+      <section class="cartoes">
+        <div class="cartao">
+          <span class="rotulo">Visitas hoje</span>
+          <strong>128</strong>
+        </div>
+        <div class="cartao">
+          <span class="rotulo">Tarefas abertas</span>
+          <strong>7</strong>
+        </div>
+        <div class="cartao">
+          <span class="rotulo">Provedor do login</span>
+          <strong id="provedor">-</strong>
+        </div>
+      </section>
+
+      <h2>Últimas atividades</h2>
+      <table>
+        <thead>
+          <tr><th>Data</th><th>Atividade</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>24/09</td><td>Login configurado com Google e GitHub</td></tr>
+          <tr><td>24/09</td><td>Banco D1 criado</td></tr>
+          <tr><td>24/09</td><td>Site publicado no Cloudflare Pages</td></tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

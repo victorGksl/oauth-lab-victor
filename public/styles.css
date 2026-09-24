@@ -45,3 +45,53 @@ form .botao {
 [hidden] {
   display: none !important;
 }
+
+/* ---------- Dashboard ---------- */
+main.dashboard {
+  max-width: 720px;
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  color: #2f5bd3;
+}
+
+.cartoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.cartao {
+  padding: 16px;
+  border: 1px solid #c9ccd1;
+  border-radius: 8px;
+}
+
+.cartao .rotulo {
+  display: block;
+  font-size: 14px;
+  color: #5b6068;
+}
+
+.cartao strong {
+  font-size: 24px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  border-bottom: 1px solid #e3e5e8;
+  text-align: left;
+}
