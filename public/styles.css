@@ -40,3 +40,8 @@ section {
 form .botao {
   width: 100%;
 }
+
+/* O atributo hidden precisa vencer o display: flex acima. */
+[hidden] {
+  display: none !important;
+}
