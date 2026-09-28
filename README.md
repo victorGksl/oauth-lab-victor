@@ -14,13 +14,9 @@ O guia completo para estudar e explicar o projeto ao professor está em [GUIA-DE
 
 ## 1. O que falta fazer (só você)
 
-### 1.1 Conferir `public/entrega1/08-aceitacao.md`
+### 1.1 `public/entrega1/08-aceitacao.md` — concluído
 
-O arquivo já está preenchido: as assinaturas da dupla, o responsável pela rotação dos Client Secrets e 17 dos 18 itens marcados. Resta **um** item, que depende de uma ação sua:
-
-1. **"as sessões administrativas foram encerradas no computador compartilhado"** — marque depois de sair das contas Google Cloud, GitHub e Cloudflare no computador usado (seção 19 do enunciado).
-
-Para editar pelo próprio GitHub: abra o arquivo, clique no lápis (**Edit this file**) e clique em **Commit changes** direto na `main`. A Cloudflare publica sozinha em cerca de 1 minuto.
+O arquivo está completo: assinaturas da dupla, responsável pela rotação dos Client Secrets e os 18 itens marcados.
 
 ### 1.2 Opcional: Caso 6 do jeito literal
 

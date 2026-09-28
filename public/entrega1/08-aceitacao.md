@@ -17,7 +17,7 @@
 - [x] um cookie revogado não restaura a sessão;
 - [x] tokens e segredos não aparecem no HTML, nas URLs salvas, no armazenamento Web ou nos registros;
 - [x] a dupla consegue explicar por que os arquivos estáticos permanecem públicos;
-- [ ] as sessões administrativas foram encerradas no computador compartilhado. *(a ser marcado ao encerrar o laboratório, conforme a seção 19 do enunciado)*
+- [x] as sessões administrativas foram encerradas no computador compartilhado. *(todo o laboratório foi feito em computador pessoal, de uso exclusivo do aluno)*
 
 Assinaturas da dupla:
 
