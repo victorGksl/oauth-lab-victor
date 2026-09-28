@@ -385,7 +385,7 @@ Por que guardamos o `state` como resumo, mas o `code_verifier` cru? O `state` s�
 3. Calcula o resumo do cookie e busca a transação com `id_hash = ?`, `provider = ?` e `expires_at > agora`. Não achou → recusa (transação ausente, expirada, de outro provedor, ou já usada → **Caso 3**).
 4. Compara `SHA-256(state recebido)` com `state_hash` → diferente, recusa (**Caso 2**). Note que isso acontece **antes** da troca do código.
 5. Apaga a transação. Se `meta.changes !== 1`, outro pedido já usou a mesma transação ao mesmo tempo → recusa. Assim ela é realmente de **uso único**.
-6. `trocarCodigoPorTokens`: `POST` no token endpoint com `grant_type=authorization_code`, `code`, `redirect_uri`, `client_id`, **`client_secret`** e **`code_verifier`**. Único lugar do projeto onde o Client Secret é usado.
+6. `trocarCodigoPorTokens`: `POST` no token endpoint com `grant_type=authorization_code`, `code`, `redirect_uri`, `client_id`, **`client_secret`** e **`code_verifier`**. Este é um dos **dois** pontos em que o Client Secret é usado; o outro é a autenticação Basic da revogação no GitHub (`confirmarIdentidadeGithub`). Nos dois casos ele so trafega do servidor para o provedor, nunca para o navegador.
 7. Confirma a identidade:
    - Google → `validarIdTokenGoogle(tokens.id_token, GOOGLE_CLIENT_ID, transacao.nonce)`.
    - GitHub → `confirmarIdentidadeGithub(env, tokens)`.
@@ -454,7 +454,7 @@ No Caso 5 há **duas** barreiras: o navegador nem envia o cookie (é `SameSite=S
 
 Outras recusas que o código também faz: provedor desconhecido (404), `error` na URL (400), transação de outro provedor (400), `nonce`/`aud`/`iss`/`exp` inválidos (400), assinatura inválida (400), revogação do GitHub diferente de 204 (400, sem sessão).
 
-Obs.: testei o código localmente com um banco e provedores simulados, e todos esses casos se comportaram como na tabela. O teste real no pages.dev ainda precisa ser feito por você para preencher o "resultado observado".
+Obs.: além dos testes locais com banco e provedores simulados, os seis casos foram executados em produção no `pages.dev` em 24/09/2026. Os resultados observados estão registrados em `public/entrega1/07-testes-falha.md`.
 
 ---
 
