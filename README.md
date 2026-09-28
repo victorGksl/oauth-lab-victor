@@ -1,5 +1,8 @@
 # Laboratório: login em um site estático no Cloudflare Pages
 
+Victor Gabriel Kovalski de Barros — RA: 2026108637  
+Vitória Faranhas Braga — RA: 2026109204
+
 Site em produção: https://oauth-lab-victor.pages.dev
 
 - Dashboard: https://oauth-lab-victor.pages.dev/dashboard.html
@@ -11,16 +14,14 @@ O guia completo para estudar e explicar o projeto ao professor está em [GUIA-DE
 
 ## 1. O que falta fazer (só você)
 
-### 1.1 Preencher `public/entrega1/08-aceitacao.md`
+### 1.1 Conferir `public/entrega1/08-aceitacao.md`
 
-Pelo próprio GitHub: abra o arquivo, clique no lápis (**Edit this file**), faça as alterações e clique em **Commit changes** direto na `main`. A Cloudflare publica sozinha em cerca de 1 minuto.
+O arquivo já está preenchido: as assinaturas da dupla, o responsável pela rotação dos Client Secrets e 16 dos 18 itens marcados. Restam **dois** itens, que dependem de uma decisão ou de uma ação sua:
 
-1. **Marque os itens** trocando `- [ ]` por `- [x]`. Três deles dependem de você:
-   - **"a equipe não instalou nem executou Node.js, npm, npx ou Wrangler"**: o projeto não usa Node (não tem `package.json` e não tem build; a Cloudflare publica direto do GitHub). Porém, durante a preparação, o Node.js foi executado localmente para testar o código com um banco simulado e para editar os arquivos de evidência. npm, npx e Wrangler não foram usados. Decida se marca, e se o professor perguntar, explique exatamente isso.
-   - **"a dupla consegue explicar por que os arquivos estáticos permanecem públicos"**: marque depois de ler as Partes 4.2 e 8 do guia.
-   - **"as sessões administrativas foram encerradas no computador compartilhado"**: marque depois de sair das contas Google Cloud, GitHub e Cloudflare no computador usado.
-2. **Assinaturas:** troque `[NOME DA INTEGRANTE 1]` e `[NOME DA INTEGRANTE 2]` pelos nomes da dupla.
-3. **Responsável pela rotação dos Client Secrets:** troque `[NOME]` por quem vai gerar segredos novos se eles vazarem ou vencerem (normalmente você).
+1. **"a equipe não instalou nem executou Node.js, npm, npx ou Wrangler"** — está `- [ ]` com uma nota explicando o caso: o projeto não usa Node (sem `package.json`, sem build, a Cloudflare publica direto do GitHub) e npm, npx e Wrangler nunca foram usados, mas o Node.js foi executado localmente para conferir o código com um banco e provedores simulados. Se você entender que isso não conta, troque por `- [x]`. Se o professor perguntar, explique exatamente isso.
+2. **"as sessões administrativas foram encerradas no computador compartilhado"** — marque depois de sair das contas Google Cloud, GitHub e Cloudflare no computador usado (seção 19 do enunciado).
+
+Para editar pelo próprio GitHub: abra o arquivo, clique no lápis (**Edit this file**) e clique em **Commit changes** direto na `main`. A Cloudflare publica sozinha em cerca de 1 minuto.
 
 ### 1.2 Opcional: Caso 6 do jeito literal
 
@@ -56,7 +57,7 @@ O `07-testes-falha.md` registra o Caso 6 feito por equivalência: a linha da ses
 | Login GitHub | produção | ✅ sessão criada (e-mail nulo, mostra o login), token revogado |
 | Testes de falha 1 a 6 | `public/entrega1/07-testes-falha.md` | ✅ todos recusados como esperado |
 | Evidências 01 a 07 | `public/entrega1/` | ✅ prontas e saneadas |
-| Evidência 08 | `public/entrega1/08-aceitacao.md` | ⏳ falta você preencher (item 1.1) |
+| Evidência 08 | `public/entrega1/08-aceitacao.md` | ✅ preenchida e assinada; 2 itens dependem de você (item 1.1) |
 
 ## 3. Estrutura do projeto
 

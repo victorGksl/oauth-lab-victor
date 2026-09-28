@@ -1,8 +1,10 @@
 # Contexto completo do trabalho (para continuar em outro PC)
 
-Este arquivo guarda **tudo o que aconteceu** na sessão de trabalho de 24/09/2026. Serve para você continuar de outro computador, sozinho ou com o Claude.
+Victor Gabriel Kovalski de Barros — RA: 2026108637  
+Vitória Faranhas Braga — RA: 2026109204
 
-> **Para continuar com o Claude em outro PC:** abra o Claude (Claude Code ou claude.ai), anexe ou cole este arquivo e o `README.md`, e diga algo como: *"Este é o contexto do meu laboratório OAuth no Cloudflare Pages. Continue de onde parou: [o que você quer]."*
+Este arquivo guarda **tudo o que aconteceu** na sessão de trabalho de 24/09/2026. Serve para você continuar de outro computador.
+
 
 Nenhum segredo está neste arquivo. Client Secrets, tokens e cookies nunca foram vistos nem gravados; eles só existem nos painéis do Google, do GitHub e da Cloudflare.
 
