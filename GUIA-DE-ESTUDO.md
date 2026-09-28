@@ -385,7 +385,7 @@ Por que guardamos o `state` como resumo, mas o `code_verifier` cru? O `state` s�
 3. Calcula o resumo do cookie e busca a transação com `id_hash = ?`, `provider = ?` e `expires_at > agora`. Não achou → recusa (transação ausente, expirada, de outro provedor, ou já usada → **Caso 3**).
 4. Compara `SHA-256(state recebido)` com `state_hash` → diferente, recusa (**Caso 2**). Note que isso acontece **antes** da troca do código.
 5. Apaga a transação. Se `meta.changes !== 1`, outro pedido já usou a mesma transação ao mesmo tempo → recusa. Assim ela é realmente de **uso único**.
-6. `trocarCodigoPorTokens`: `POST` no token endpoint com `grant_type=authorization_code`, `code`, `redirect_uri`, `client_id`, **`client_secret`** e **`code_verifier`**. Este é um dos **dois** pontos em que o Client Secret é usado; o outro é a autenticação Basic da revogação no GitHub (`confirmarIdentidadeGithub`). Nos dois casos ele so trafega do servidor para o provedor, nunca para o navegador.
+6. `trocarCodigoPorTokens`: `POST` no token endpoint com `grant_type=authorization_code`, `code`, `redirect_uri`, `client_id`, **`client_secret`** e **`code_verifier`**. Este é um dos **dois** pontos em que o Client Secret é usado; o outro é a autenticação Basic da revogação no GitHub (`confirmarIdentidadeGithub`). Nos dois casos ele só trafega do servidor para o provedor, nunca para o navegador.
 7. Confirma a identidade:
    - Google → `validarIdTokenGoogle(tokens.id_token, GOOGLE_CLIENT_ID, transacao.nonce)`.
    - GitHub → `confirmarIdentidadeGithub(env, tokens)`.
