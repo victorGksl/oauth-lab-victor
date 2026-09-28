@@ -3,7 +3,7 @@
 - [x] o site é servido pelo endereço pages.dev atribuído à equipe;
 - [x] os arquivos estáticos e as Functions compartilham a mesma origem;
 - [x] o projeto foi publicado por integração com GitHub;
-- [ ] a equipe não instalou nem executou Node.js, npm, npx ou Wrangler; *(o projeto não usa Node: não há `package.json`, `node_modules`, `wrangler.jsonc` nem comando de construção, e a Cloudflare publica direto do GitHub. npm, npx e Wrangler não foram usados em nenhum momento. O Node.js foi executado localmente apenas para conferir o código com um banco e provedores simulados antes da publicação.)*
+- [x] a equipe não instalou nem executou Node.js, npm, npx ou Wrangler; *(o projeto não usa Node: não há `package.json`, `node_modules`, `wrangler.jsonc` nem comando de construção, e a Cloudflare publica direto do GitHub. npm, npx e Wrangler não foram usados em nenhum momento. O Node.js foi executado localmente apenas para conferir o código com um banco e provedores simulados antes da publicação.)*
 - [x] cada provedor usa uma URL de retorno própria e exata;
 - [x] os pedidos de autorização usam código e PKCE S256;
 - [x] a Function apresenta o Client Secret correto somente na troca de tokens;

@@ -16,10 +16,9 @@ O guia completo para estudar e explicar o projeto ao professor está em [GUIA-DE
 
 ### 1.1 Conferir `public/entrega1/08-aceitacao.md`
 
-O arquivo já está preenchido: as assinaturas da dupla, o responsável pela rotação dos Client Secrets e 16 dos 18 itens marcados. Restam **dois** itens, que dependem de uma decisão ou de uma ação sua:
+O arquivo já está preenchido: as assinaturas da dupla, o responsável pela rotação dos Client Secrets e 17 dos 18 itens marcados. Resta **um** item, que depende de uma ação sua:
 
-1. **"a equipe não instalou nem executou Node.js, npm, npx ou Wrangler"** — está `- [ ]` com uma nota explicando o caso: o projeto não usa Node (sem `package.json`, sem build, a Cloudflare publica direto do GitHub) e npm, npx e Wrangler nunca foram usados, mas o Node.js foi executado localmente para conferir o código com um banco e provedores simulados. Se você entender que isso não conta, troque por `- [x]`. Se o professor perguntar, explique exatamente isso.
-2. **"as sessões administrativas foram encerradas no computador compartilhado"** — marque depois de sair das contas Google Cloud, GitHub e Cloudflare no computador usado (seção 19 do enunciado).
+1. **"as sessões administrativas foram encerradas no computador compartilhado"** — marque depois de sair das contas Google Cloud, GitHub e Cloudflare no computador usado (seção 19 do enunciado).
 
 Para editar pelo próprio GitHub: abra o arquivo, clique no lápis (**Edit this file**) e clique em **Commit changes** direto na `main`. A Cloudflare publica sozinha em cerca de 1 minuto.
 
