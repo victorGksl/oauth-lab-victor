@@ -34,6 +34,7 @@ jobs:
         with:
           prompt-file: resumo.txt
           model: ''
+          model: ''
           system-prompt: Você descreve mudanças de banco de dados de forma objetiva.
       - name: Publica o resumo
         run: |
