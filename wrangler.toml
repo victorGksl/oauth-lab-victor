@@ -1,0 +1,9 @@
+# Usado só pelo wrangler (migrações D1). Sem pages_build_output_dir de propósito:
+# assim o Pages continua usando a configuração do painel (variáveis, segredos e binding).
+name = "oauth-lab-victor"
+compatibility_date = "2026-09-24"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "oauth-sessions-victor"
+database_id = "3a757266-d165-4662-b1b9-ef24f29fedee"
