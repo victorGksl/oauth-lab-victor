@@ -1,0 +1,40 @@
+name: migrar
+on:
+  push:
+    branches: [main]
+    paths: ['migrations/**']
+jobs:
+  aplicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - run: npx --yes wrangler d1 migrations apply oauth-sessions-victor --remote
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      # Bônus: resumo das migrações aplicadas, escrito na página da execução
+      - run: npm install -g @github/copilot
+      - name: Monta o prompt do resumo
+        run: |
+          {
+            echo "Resuma em português, em até 5 itens, o que estas migrações D1 mudam no banco."
+            echo '```sql'
+            git diff HEAD~1 HEAD -- migrations/
+            echo '```'
+          } > resumo.txt
+      - id: resumo
+        uses: actions/ai-inference@v1
+        env:
+          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_PAT }}
+        with:
+          prompt-file: resumo.txt
+          system-prompt: Você descreve mudanças de banco de dados de forma objetiva.
+      - name: Publica o resumo
+        run: |
+          echo "## Migrações aplicadas" >> "$GITHUB_STEP_SUMMARY"
+          cat "${{ steps.resumo.outputs.response-file }}" >> "$GITHUB_STEP_SUMMARY"
