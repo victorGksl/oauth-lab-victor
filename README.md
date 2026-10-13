@@ -1,4 +1,4 @@
-# Laboratório: login em um site estático no Cloudflare Pages
+# 1. Laboratório: login em um site estático no Cloudflare Pages
 
 Victor Gabriel Kovalski de Barros — RA: 2026108637  
 Vitória Faranhas Braga — RA: 2026109204
@@ -12,31 +12,7 @@ O guia completo para estudar e explicar o projeto ao professor está em [GUIA-DE
 
 ---
 
-## 1. O que falta fazer (só você)
 
-### 1.1 `public/entrega1/08-aceitacao.md` — concluído
-
-O arquivo está completo: assinaturas da dupla, responsável pela rotação dos Client Secrets e os 18 itens marcados.
-
-### 1.2 Opcional: Caso 6 do jeito literal
-
-O `07-testes-falha.md` registra o Caso 6 feito por equivalência: a linha da sessão foi removida no D1 enquanto o cookie continuava no navegador, e o resultado foi 401. Se o professor exigir o procedimento literal:
-
-1. Faça login no site. Aperte F12 e vá em **Application → Cookies → https://oauth-lab-victor.pages.dev**. Copie o **valor** de `__Host-session` num bloco de notas.
-2. Clique em **Sair**.
-3. Em Application → Cookies, crie de novo `__Host-session` com o valor copiado e recarregue. Deve aparecer **"Nenhuma sessão neste navegador."**
-4. Apague a cópia. Nunca coloque esse valor na entrega.
-
-### 1.3 No fim do laboratório
-
-- Saia das contas Google Cloud, GitHub e Cloudflare em computadores compartilhados.
-- **O projeto do Google Cloud (`oauth-lab-victor`) foi criado dentro da organização addvaloraglobal.com**, a da empresa. Quando o professor autorizar a limpeza, apague-o em https://console.cloud.google.com, e depois apague a OAuth App do GitHub, o projeto Pages e o banco D1.
-- Responsável pela rotação dos segredos:
-  - GitHub: *Settings → Developer settings → OAuth Apps → oauth-lab-victor → Generate a new client secret*.
-  - Google: *Google Auth Platform → Clientes → oauth-lab-victor-web*.
-  - Depois de gerar, atualize o valor em *Cloudflare → Workers & Pages → oauth-lab-victor → Settings → Variables and secrets* e faça uma nova implantação.
-
----
 
 ## 2. O que já está feito e conferido
 
