@@ -28,7 +28,7 @@ jobs:
             echo '```'
           } > resumo.txt
       - id: resumo
-        uses: actions/ai-inference@v1
+        uses: actions/ai-inference@v3  # a v1 ainda usa o GitHub Models; a v3 usa o Copilot
         env:
           COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_PAT }}
         with:
