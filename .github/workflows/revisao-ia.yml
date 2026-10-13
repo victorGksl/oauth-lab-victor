@@ -27,11 +27,13 @@ jobs:
             echo '```'
           } > prompt.txt
       - id: ia
-        uses: actions/ai-inference@v1
+        uses: actions/ai-inference@v3  # a v1 ainda usa o GitHub Models; a v3 usa o Copilot
         env:
           COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_PAT }}
         with:
           prompt-file: prompt.txt
+          model: ''  # o gpt-4.1 não existe no plano Copilot desta conta; '' = padrão da CLI
+          model: ''  # o gpt-4.1 não existe no plano Copilot desta conta; '' = padrão da CLI
           system-prompt: Você é um revisor de código objetivo.
       - name: Comenta no PR
         env:
