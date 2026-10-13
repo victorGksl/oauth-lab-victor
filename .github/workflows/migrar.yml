@@ -33,6 +33,7 @@ jobs:
           COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_PAT }}
         with:
           prompt-file: resumo.txt
+          model: ''
           system-prompt: Você descreve mudanças de banco de dados de forma objetiva.
       - name: Publica o resumo
         run: |
