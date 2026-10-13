@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS oauth_transactions (
   id_hash       TEXT PRIMARY KEY,
   provider      TEXT NOT NULL CHECK (provider IN ('google', 'github')),
   state_hash    TEXT NOT NULL,
-  nonce         TEXT NOT NULL,
+  nonce         TEXT,          -- o GitHub (OAuth sem OIDC) não tem nonce
   code_verifier TEXT NOT NULL,
   expires_at    INTEGER NOT NULL
 );
